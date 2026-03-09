@@ -1,35 +1,204 @@
-# v0-tree-monitoring-dashboard
+🌳 Tree Monitoring Dashboard
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+A Geo-Tag Based Tree Monitoring System that tracks tree locations, health status, and environmental impact using an interactive dashboard and map.
 
-## Built with v0
+This project helps organizations, campuses, and environmental groups digitally track planted trees, monitor their health, and analyze environmental impact such as CO₂ absorption and oxygen production.
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+🚀 Features
+🌳 Tree Management
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_hCM9MgpQResMbejwDKVIPN136XLl)
+Register new trees
 
-## Getting Started
+Store tree species, location, and health status
 
-First, run the development server:
+Maintain a centralized tree database
 
-```bash
+📍 Geo-Location Tracking
+
+View tree locations on an interactive map
+
+Monitor plantation areas
+
+📊 Environmental Impact Dashboard
+
+Automatically calculates:
+
+Total trees planted
+
+Estimated CO₂ absorbed
+
+Estimated oxygen generated
+
+🔍 Tree Health Monitoring
+
+Track tree condition such as:
+
+Healthy
+
+Average
+
+Needs attention
+
+📈 Analytics & Dashboard
+
+Visualize plantation statistics and environmental impact.
+
+🏗 Project Architecture
+
+This is a full-stack web project built using Next.js for frontend and API routes for backend logic.
+
+tree-monitoring-project
+│
+├── app
+│   ├── api
+│   │   ├── trees
+│   │   │   └── route.ts
+│   │   ├── register
+│   │   │   └── route.ts
+│   │   ├── stats
+│   │   │   └── route.ts
+│   │   └── health
+│   │       └── route.ts
+│
+├── components
+├── hooks
+├── lib
+│   └── db.ts
+│
+├── public
+├── styles
+│
+├── package.json
+└── README.md
+🖥 Backend API Endpoints
+Register Tree
+POST /api/register
+
+Registers a new tree.
+
+Example request:
+
+{
+  "name": "Neem Tree",
+  "species": "Azadirachta indica",
+  "location": "Campus Garden",
+  "health": "Healthy"
+}
+Get Tree List
+GET /api/trees
+
+Returns all registered trees.
+
+Environmental Statistics
+GET /api/stats
+
+Returns:
+
+total trees
+
+estimated CO₂ absorbed
+
+oxygen produced
+
+Example response:
+
+{
+  "totalTrees": 120,
+  "co2Absorbed": 2640,
+  "oxygenGenerated": 12000
+}
+Health Monitoring
+POST /api/health
+
+Evaluates tree health status.
+
+🗄 Database
+
+The system uses SQLite for storing tree data.
+
+Example table structure:
+
+CREATE TABLE trees (
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ name TEXT,
+ species TEXT,
+ location TEXT,
+ health TEXT
+);
+⚙️ Installation
+
+Clone the repository:
+
+git clone https://github.com/lavanyamawale14/tree-monitoring-project.git
+
+Go into the project directory:
+
+cd tree-monitoring-project
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+🛠 Technologies Used
+Frontend
 
-## Learn More
+Next.js
 
-To learn more, take a look at the following resources:
+React
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+TypeScript
 
-<a href="https://v0.app/chat/api/kiro/clone/ShrutiMandlik0704/v0-tree-monitoring-dashboard" alt="Open in Kiro"><img src="https://pdgvvgmkdvyeydso.public.blob.vercel-storage.com/open%20in%20kiro.svg?sanitize=true" /></a>
+CSS
+
+Backend
+
+Next.js API Routes
+
+Node.js
+
+Database
+
+SQLite
+
+Tools
+
+GitHub
+
+VS Code
+
+👥 Team Contribution
+
+This is a group project.
+
+Example roles:
+
+Frontend Development – UI components and dashboard
+
+Backend Development – API routes and database integration
+
+Data & Analytics – Environmental impact calculations
+
+UI/UX Design – Layout and design system
+
+🌍 Future Improvements
+
+QR code tagging for trees
+
+Image upload for tree monitoring
+
+AI-based tree health detection
+
+Growth tracking charts
+
+Mobile responsive dashboard
+
+📄 License
+
+This project is developed for educational and environmental monitoring purposes.
