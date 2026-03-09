@@ -2,20 +2,20 @@
 
 A Geo-Tag Based Tree Monitoring System that tracks tree locations, health status, and environmental impact using an interactive dashboard and map.
 
-This project helps organizations, campuses, and environmental groups digitally track planted trees, monitor their health, and analyze environmental impact such as CO₂ absorption and oxygen production.
+This system helps organizations and campuses monitor plantation efforts, analyze environmental impact, and manage tree health digitally.
 
 🚀 Features
 🌳 Tree Management
 
 Register new trees
 
-Store tree species, location, and health status
+Store species, location, and health status
 
-Maintain a centralized tree database
+Maintain centralized tree records
 
-📍 Geo-Location Tracking
+📍 Location Tracking
 
-View tree locations on an interactive map
+View trees on an interactive map
 
 Monitor plantation areas
 
@@ -37,15 +37,15 @@ Healthy
 
 Average
 
-Needs attention
+Needs Attention
 
-📈 Analytics & Dashboard
+📈 Analytics & Visualization
 
-Visualize plantation statistics and environmental impact.
+View plantation statistics through dashboards.
 
 🏗 Project Architecture
 
-This is a full-stack web project built using Next.js for frontend and API routes for backend logic.
+This project uses Next.js for frontend and API routes for backend.
 
 tree-monitoring-project
 │
@@ -72,6 +72,7 @@ tree-monitoring-project
 └── README.md
 🖥 Backend API Endpoints
 Register Tree
+
 POST /api/register
 
 Registers a new tree.
@@ -85,20 +86,16 @@ Example request:
   "health": "Healthy"
 }
 Get Tree List
+
 GET /api/trees
 
 Returns all registered trees.
 
 Environmental Statistics
+
 GET /api/stats
 
-Returns:
-
-total trees
-
-estimated CO₂ absorbed
-
-oxygen produced
+Returns environmental impact data.
 
 Example response:
 
@@ -108,15 +105,16 @@ Example response:
   "oxygenGenerated": 12000
 }
 Health Monitoring
+
 POST /api/health
 
 Evaluates tree health status.
 
 🗄 Database
 
-The system uses SQLite for storing tree data.
+The system uses SQLite to store tree data.
 
-Example table structure:
+Example schema:
 
 CREATE TABLE trees (
  id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -131,7 +129,7 @@ Clone the repository:
 
 git clone https://github.com/lavanyamawale14/tree-monitoring-project.git
 
-Go into the project directory:
+Move into the project folder:
 
 cd tree-monitoring-project
 
@@ -177,13 +175,13 @@ VS Code
 
 This is a group project.
 
-Example roles:
+Possible roles:
 
 Frontend Development – UI components and dashboard
 
-Backend Development – API routes and database integration
+Backend Development – API routes and database
 
-Data & Analytics – Environmental impact calculations
+Analytics – Environmental impact calculations
 
 UI/UX Design – Layout and design system
 
@@ -191,14 +189,10 @@ UI/UX Design – Layout and design system
 
 QR code tagging for trees
 
-Image upload for tree monitoring
+Tree image upload
 
 AI-based tree health detection
 
 Growth tracking charts
 
 Mobile responsive dashboard
-
-📄 License
-
-This project is developed for educational and environmental monitoring purposes.
