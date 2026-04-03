@@ -10,7 +10,6 @@ export async function getDB() {
       driver: sqlite3.Database,
     });
 
-    // Create table if not exists
     await db.exec(`
       CREATE TABLE IF NOT EXISTS trees (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
