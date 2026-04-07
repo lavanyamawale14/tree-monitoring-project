@@ -61,7 +61,10 @@ export function AddTreeForm({ onAddTree }: AddTreeFormProps) {
       console.log("Saved:", data)
 
       setSubmitted(true)
-      window.location.reload()
+
+setTimeout(() => {
+  window.location.reload()
+}, 1500)
 
       setTimeout(() => {
         setSubmitted(false)
