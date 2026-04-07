@@ -33,15 +33,21 @@ function healthBadgeVariant(status: TreeData["healthStatus"]) {
   }
 }
 
-export function TreeMap({ trees, onSelectTree }: TreeMapProps) {
+export function TreeMap({ onSelectTree }: TreeMapProps) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<L.Map | null>(null)
   const [selectedTree, setSelectedTree] = useState<TreeData | null>(null)
+  const [trees, setTrees] = useState<TreeData[]>([])
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return
+    
 
     const initMap = async () => {
+      const res = await fetch("https://tree-monitoring-project.onrender.com/api/trees")
+const treesData = await res.json()
+console.log("Fetched trees:", treesData)
+
       const L = (await import("leaflet")).default
       await import("leaflet/dist/leaflet.css")
 
@@ -57,7 +63,7 @@ export function TreeMap({ trees, onSelectTree }: TreeMapProps) {
         maxZoom: 19,
       }).addTo(map)
 
-      trees.forEach((tree) => {
+      treesData.forEach((tree) => {
         const color = healthColor(tree.healthStatus)
         const icon = L.divIcon({
           className: "custom-tree-marker",
