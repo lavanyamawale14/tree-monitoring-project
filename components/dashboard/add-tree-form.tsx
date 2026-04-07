@@ -47,13 +47,14 @@ export function AddTreeForm({ onAddTree }: AddTreeFormProps) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: formData.name,
-            species: formData.type,
-            height: parseFloat(formData.height),
-            health: formData.healthStatus,
-            lat: parseFloat(formData.lat),
-            lng: parseFloat(formData.lng),
-          }),
+  name: formData.name,
+  type: formData.type,
+  height: parseFloat(formData.height),
+  healthStatus: formData.healthStatus,
+  datePlanted: new Date().toISOString().split("T")[0],
+  lat: parseFloat(formData.lat),
+  lng: parseFloat(formData.lng),
+}),
         }
       )
 
