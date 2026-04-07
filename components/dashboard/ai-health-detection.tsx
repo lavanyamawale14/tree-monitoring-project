@@ -71,13 +71,31 @@ export function AIHealthDetection() {
   }, [])
 
   const handleAnalyze = useCallback(async () => {
-    if (!imagePreview) return
-    setIsAnalyzing(true)
-    const analysisResult = await simulateAIAnalysis()
-    setResult(analysisResult)
-    setIsAnalyzing(false)
-  }, [imagePreview])
+  if (!imagePreview) return
 
+  setIsAnalyzing(true)
+
+  try {
+    const response = await fetch(
+      "https://tree-monitoring-project.onrender.com/api/trees/analyze"
+    )
+
+    const data = await response.json()
+
+    setResult({
+      status: data.health,
+      confidence: parseFloat(data.confidence),
+      details: ["AI analysis completed successfully"],
+    })
+
+  } catch (error) {
+    console.error(error)
+  }
+
+  setIsAnalyzing(false)
+}, [imagePreview])
+
+ 
   const statusIcon = result?.status === "Healthy"
     ? CheckCircle2
     : result?.status === "Moderate"
